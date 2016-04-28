@@ -3,10 +3,11 @@
 *.ipr
 *.iws
 *.ids
-build
+build/
 src/generated
 .gradle
 .DS_Store
+classes/
 work/
 
 node_modules/
