@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Plugin-Dependencies: workflow-cps:2.0,workflow-aggregator:2.0,script-s
+ ecurity:1.15,simple-build-for-pipeline:0.2
+Long-Name: Instil Extensions to the Delivery Pipeline DSL
+Group-Id: org.jenkins-ci.plugins
+Extension-Name: instil-pipeline-dsl
+Plugin-Version: 0.1.0
+Jenkins-Version: 2.0
+Url: https://github.com/instil/jenkins-pipeline-dsl-plugin
+Short-Name: instil-pipeline-dsl
+

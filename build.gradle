@@ -1,0 +1,32 @@
+plugins {
+  id "org.jenkins-ci.jpi" version "0.17.0"
+}
+
+group = "org.jenkins-ci.plugins"
+
+ext {
+    jenkinsCoreVersion = "2.0"
+    pipelineVersion = "2.0"
+}
+
+jenkinsPlugin {
+    coreVersion = "2.0"
+    shortName = "instil-pipeline-dsl"
+    displayName = "Instil Delivery Pipeline Extensions"
+    url = "https://github.com/instil/jenkins-pipeline-dsl-plugin"
+    gitHubUrl = "https://github.com/instil/jenkins-pipeline-dsl-plugin"
+}
+
+dependencies {
+    jenkinsPlugins "org.jenkins-ci.plugins.workflow:workflow-cps:$pipelineVersion@jar"
+    jenkinsPlugins "org.jenkins-ci.plugins.workflow:workflow-aggregator:$pipelineVersion@jar"
+    jenkinsPlugins "org.jenkins-ci.plugins:script-security:1.15@jar"
+    jenkinsPlugins "org.jenkins-ci.plugins:simple-build-for-pipeline:0.2@jar"
+    jenkinsPlugins "org.jenkins-ci.plugins:git:2.4.4@jar"
+    jenkinsPlugins "org.jenkins-ci.plugins:junit:1.11@jar"
+    jenkinsPlugins "org.jenkins-ci.plugins:mailer:1.16@jar"
+    jenkinsPlugins "org.jvnet.hudson.plugins:checkstyle:3.45@jar"
+    jenkinsPlugins "org.jvnet.hudson.plugins:findbugs:4.64@jar"
+    jenkinsPlugins "org.jvnet.hudson.plugins:pmd:3.44@jar"
+    jenkinsPlugins "org.jvnet.hudson.plugins:tasks:4.48@jar"
+}

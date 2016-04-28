@@ -1,0 +1,13 @@
+.idea/*
+*.iml
+*.ipr
+*.iws
+*.ids
+build
+src/generated
+.gradle
+.DS_Store
+work/
+
+node_modules/
+bower_components/
