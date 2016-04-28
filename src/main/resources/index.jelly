@@ -3,5 +3,5 @@
   This view is used to render the installed plugins page.
 -->
 <div>
-    This plugin provides extensions to the Delivery Pipeline DSL to improve readability of Jenkinsfile's.
+    This plugin provides extensions to the Delivery Pipeline DSL.
 </div>

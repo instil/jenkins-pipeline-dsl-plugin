@@ -4,13 +4,13 @@
     <p>
         Execute a gradle build capturing test and static analysis reports with email notifications sent on failure.
     </p>
-    <p>
-        <code>
-            gradleBuild {
-                archiveFiles = "build/libs/*.jar"
-            }
-        </code>
-    </p>
+<pre>
+<code>
+gradleBuild {
+    archiveFiles = "build/libs/*.jar"
+}
+</code>
+</pre>
     <p><strong>Supported Configuration</strong></p>
     <ul>
         <li>archiveFiles - a comma separated list of paths or Ant-style globs for build artifacts which should be archived.</li>
