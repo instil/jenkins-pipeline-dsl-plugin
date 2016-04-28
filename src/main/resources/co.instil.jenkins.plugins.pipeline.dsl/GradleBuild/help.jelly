@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler">
+    <p>
+        Execute a gradle build capturing test and static analysis reports with email notifications sent on failure.
+    </p>
+    <p>
+        <code>
+            gradleBuild {
+                archiveFiles = "build/libs/*.jar"
+            }
+        </code>
+    </p>
+    <p><strong>Supported Configuration</strong></p>
+    <ul>
+        <li>archiveFiles - a comma separated list of paths or Ant-style globs for build artifacts which should be archived.</li>
+    </ul>
+</j:jelly>
