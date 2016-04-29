@@ -6,7 +6,7 @@ node {
                                          name: "shouldRelease"]]]])
 
     stage "Checkout"
-    git url: "https://github.com/instil/jenkins-pipeline-dsl-plugin.git"
+    git url: "git@github.com:instil/jenkins-pipeline-dsl-plugin.git"
 
     stage "Build"
     sh "./gradlew clean build"
