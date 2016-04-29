@@ -12,7 +12,7 @@ node {
     sh "./gradlew clean build"
     archive includes: "build/libs/*.hpi"
 
-    if (shouldRelease) {
+    if (shouldRelease && shouldRelease.toBoolean()) {
         sh "./gradlew -Prelease.useAutomaticVersion=true release"
     }
 }
