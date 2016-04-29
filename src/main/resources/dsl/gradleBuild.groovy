@@ -7,7 +7,9 @@ def call(body) {
     body.delegate = config
     body()
 
-    sh "./gradlew clean build"
+
+    tasks = config.tasks ?: "clean build"
+    sh "./gradlew ${tasks}"
     archive includes: config.archiveFiles ?: "build/libs/*.jar"
     publishJunitTestResults "build/test-results/**/TEST-*.xml"
     publishCheckstyleResults pattern: "build/reports/checkstyle/main.xml"

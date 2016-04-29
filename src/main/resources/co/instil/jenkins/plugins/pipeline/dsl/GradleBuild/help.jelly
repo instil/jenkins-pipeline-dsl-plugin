@@ -13,6 +13,7 @@ gradleBuild {
 </pre>
     <p><strong>Supported Configuration</strong></p>
     <ul>
+        <li>tasks - the list of Gradle tasks to be executed.</li>
         <li>archiveFiles - a comma separated list of paths or Ant-style globs for build artifacts which should be archived.</li>
     </ul>
 </j:jelly>
