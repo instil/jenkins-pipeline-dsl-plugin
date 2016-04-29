@@ -13,6 +13,6 @@ node {
     archive includes: "build/libs/*.hpi"
 
     if (shouldRelease) {
-        sh "./gradlew release"
+        sh "./gradlew -Prelease.useAutomaticVersion=true release"
     }
 }
