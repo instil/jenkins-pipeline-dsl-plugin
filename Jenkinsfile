@@ -13,7 +13,7 @@ node {
     archive includes: "build/libs/*.hpi"
 
     if (shouldRelease == "true") {
-        stage "Release", concurrency: 1
+        stage name: "Release", concurrency: 1
         sh "./gradlew -Prelease.useAutomaticVersion=true release"
     }
 }
