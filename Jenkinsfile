@@ -1,9 +1,9 @@
 node {
-    properties [[$class: "ParametersDefinitionProperty", 
+    properties([[$class: "ParametersDefinitionProperty",
                  parameterDefinitions: [[$class: "BooleanParameterDefinition", 
                                          defaultValue: false, 
                                          description: "Release version?",
-                                         name: "RELEASE"]]]]
+                                         name: "RELEASE"]]]])
 
     stage "Checkout"
     git url: "https://github.com/instil/jenkins-pipeline-dsl-plugin.git"
