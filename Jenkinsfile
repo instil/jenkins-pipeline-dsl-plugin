@@ -12,7 +12,7 @@ node {
     sh "./gradlew clean build"
     archive includes: "build/libs/*.hpi"
 
-    if (shouldRelease == "true") {
+    if (shouldRelease.toBoolean()) {
         stage name: "Release", concurrency: 1
         sh "./gradlew -Prelease.useAutomaticVersion=true release"
     }
