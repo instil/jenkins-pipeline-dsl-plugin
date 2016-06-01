@@ -7,14 +7,12 @@ def call(body) {
     body.delegate = config
     body()
 
-    sendEmailNotificationOnFailure notifyCommitters: true
-
     tasks = config.tasks ?: "clean build"
     sh "./gradlew ${tasks}"
     archive includes: config.archiveFiles ?: "build/libs/*.jar"
-    publishJunitTestResults junitResults ?: "build/test-results/**/TEST-*.xml"
-    publishCheckstyleResults pattern: checkstyleResults ?: "build/reports/checkstyle/main.xml"
-    publishFindbugsResults pattern: findbugsResults ?: "build/reports/findbugs/main.xml"
-    publishPmdResults pattern: pmdResults ?: "build/reports/pmd/main.xml"
+    publishJunitTestResults config.junitResults ?: "build/test-results/**/TEST-*.xml"
+    publishCheckstyleResults pattern: config.checkstyleResults ?: "build/reports/checkstyle/main.xml"
+    publishFindbugsResults pattern: config.findbugsResults ?: "build/reports/findbugs/main.xml"
+    publishPmdResults pattern: config.pmdResults ?: "build/reports/pmd/main.xml"
     scanCodebaseForOpenTasks pattern: "src/main/**/*.java, src/main/**/*.kt"
 }
