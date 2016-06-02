@@ -30,4 +30,5 @@ dependencies {
     jenkinsPlugins "org.jvnet.hudson.plugins:findbugs:4.64@jar"
     jenkinsPlugins "org.jvnet.hudson.plugins:pmd:3.44@jar"
     jenkinsPlugins "org.jvnet.hudson.plugins:tasks:4.48@jar"
+    jenkinsPlugins "org.jvnet.hudson.plugins:android-lint:2.2@jar"
 }
