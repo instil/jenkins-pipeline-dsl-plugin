@@ -12,7 +12,7 @@ ext {
 
 jenkinsPlugin {
     coreVersion = "2.0"
-    shortName = "instil-pipeline-dsl-${project.version}"
+    shortName = "instil-pipeline-dsl"
     displayName = "Instil Delivery Pipeline Extensions"
     url = "https://github.com/instil/jenkins-pipeline-dsl-plugin"
     gitHubUrl = "https://github.com/instil/jenkins-pipeline-dsl-plugin"
