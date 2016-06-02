@@ -1,7 +1,7 @@
 package dsl
 
 def call(Map config = [:]) {
-    echo "Sending failure notification via email: ${config}"
+    echo "Sending email notification if previous steps failed: ${config}"
     step([$class: "Mailer",
           notifyEveryUnstableBuild: config.notifyForEveryUnstableBuild ?: false,
           recipients: config.additionalRecipients ?: "",
