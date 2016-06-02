@@ -2,7 +2,7 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler">
     <p>
-        Execute a gradle build capturing test and static analysis reports with email notifications sent on failure.
+        Execute a gradle build capturing test and static analysis reports automatically.
     </p>
 <pre>
 <code>
