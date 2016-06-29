@@ -23,7 +23,7 @@ def call(config) {
     booleanProperties = buildProperties(config)
 
     for (Map property : booleanProperties) {
-        if (!property.name) {
+        if (property.name == null) {
             error "Property name must be provided for boolean parameter $map"
             return
         }
