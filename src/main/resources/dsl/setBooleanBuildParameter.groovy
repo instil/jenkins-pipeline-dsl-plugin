@@ -22,13 +22,13 @@ def call(config) {
 
     booleanProperties = buildProperties(config)
 
-    for (Map property : booleanProperties) {
-        if (property.name == null) {
-            error "Property name must be provided for boolean parameter $map"
+    for (Map booleanProperty : booleanProperties) {
+        if (booleanProperty.name == null) {
+            error "Property name must be provided for boolean parameter $booleanProperty"
             return
         }
 
-        property.put("\$class", "BooleanParameterDefinition")
+        booleanProperty.put("\$class", "BooleanParameterDefinition")
     }
 
     properties([[$class: "ParametersDefinitionProperty", parameterDefinitions: booleanProperties]])
