@@ -8,7 +8,9 @@ def call(body) {
     body()
 
     tasks = config.tasks ?: "clean build"
-    sh "./gradlew ${tasks}"
+    wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'xterm']) {
+        sh "./gradlew ${tasks}"
+    }
     archive includes: config.archiveFiles ?: "**/build/libs/*.jar"
     publishJunitTestResults config.junitResults ?: "**/build/test-results/**/TEST-*.xml"
     publishCheckstyleResults pattern: config.checkstyleResults ?: "**/build/reports/checkstyle/main.xml"
