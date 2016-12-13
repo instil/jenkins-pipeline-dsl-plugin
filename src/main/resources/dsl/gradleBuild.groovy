@@ -7,14 +7,20 @@ def call(body) {
     body.delegate = config
     body()
 
-    tasks = config.tasks ?: "clean build"
+    def tasks = config.tasks ?: "clean build"
     wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'xterm']) {
-        sh "./gradlew ${tasks}"
+        try {
+            sh "./gradlew ${tasks}"
+        } finally {
+            def junitResults = config.junitResults ?: "**/TEST-*.xml"
+            junit allowEmptyResults: true, testResults: junitResults
+
+            publishCheckstyleResults pattern: config.checkstyleResults ?: "**/build/reports/checkstyle/main.xml"
+            publishFindbugsResults pattern: config.findbugsResults ?: "**/build/reports/findbugs/main.xml"
+            publishPmdResults pattern: config.pmdResults ?: "**/build/reports/pmd/main.xml"
+        }
     }
+
     archive includes: config.archiveFiles ?: "**/build/libs/*.jar"
-    publishJunitTestResults config.junitResults ?: "**/build/test-results/**/TEST-*.xml"
-    publishCheckstyleResults pattern: config.checkstyleResults ?: "**/build/reports/checkstyle/main.xml"
-    publishFindbugsResults pattern: config.findbugsResults ?: "**/build/reports/findbugs/main.xml"
-    publishPmdResults pattern: config.pmdResults ?: "**/build/reports/pmd/main.xml"
     scanCodebaseForOpenTasks pattern: "**/src/main/**/*.java, **/src/main/**/*.kt"
 }
